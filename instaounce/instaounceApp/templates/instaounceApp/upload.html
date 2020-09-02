@@ -1,0 +1,10 @@
+<h1>Upload image</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'instaounce:upload' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div> {{ form.name }} </div>
+    <div> {{ form.image }} </div>
+    <button type="submit">Upload</button> 
+</form>

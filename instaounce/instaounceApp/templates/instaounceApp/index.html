@@ -1,7 +1,9 @@
 {% if latest_image_list %}
     <ul>
     {% for image in latest_image_list %}
-        <li><a href="/instaounceApp/{{ image.id }}/">{{ image.imageFile }}</a></li>
+        <a href="{% url 'instaounce:detail' image.id %}">
+            <img src="{{ image.image.url }}" alt="{{ image.name }}">
+        </a>
     {% endfor %}
     </ul>
 {% else %}

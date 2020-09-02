@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from django.urls import include, path
 
 urlpatterns = [
+    path('', include('instaounceApp.urls')),
     path('instaounceApp/', include('instaounceApp.urls')),
     path('admin/', admin.site.urls),
 ]
