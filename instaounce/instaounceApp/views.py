@@ -19,10 +19,10 @@ class DetailView(generic.DetailView):
     template_name = 'instaounceApp/detail.html'
 
 
-class UploadView(generic.FormView):
+class UploadView(generic.CreateView):
     form_class = UploadImageForm
     template_name = 'instaounceApp/upload.html'
-    success_url = '/'
+    model = Image
+    success_url = '/instaounceApp'
 
-    def form_valid(self, form):
-        return super().form_valid(form)
+        
