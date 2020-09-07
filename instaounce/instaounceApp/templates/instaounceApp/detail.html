@@ -1,5 +1,11 @@
-<h1>Django Image Uploading</h1>
-<ul>
-    <h2>{{ image.name }}</h2>
-    <img src="{{ image.image.url }}" alt="{{ image.name }}">
-</ul>
+{% extends "./base.html" %}
+
+{% block content %}
+
+    <h1>Django Image Uploading</h1>
+    <ul>
+        <h2>{{ image.name }}</h2>
+        <img src="{{ image.image.url }}" alt="{{ image.name }}">
+    </ul>
+
+{% endblock %}

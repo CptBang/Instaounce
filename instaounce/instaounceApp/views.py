@@ -1,9 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views import generic
+from django.contrib.auth.views import LoginView
 
 from .models import Image
 from .forms import UploadImageForm
+
+class Login(LoginView):
+    template_name = 'instaounceApp/login.html'
 
 
 class IndexView(generic.ListView):
