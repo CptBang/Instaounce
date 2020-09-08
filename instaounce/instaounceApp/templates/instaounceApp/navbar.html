@@ -6,12 +6,18 @@
       </li>
       {% if user.is_authenticated %}
       <li class="nav-item">
+        <a class="nav-link" href="{% url 'instaounce:profile' %}">Profile</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="{% url 'instaounce:upload' %}">Upload</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'instaounce:logout' %}">Logout</a>
       </li>
       {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'instaounce:login' %}">Create Account</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="{% url 'instaounce:login' %}">Login</a>
       </li>

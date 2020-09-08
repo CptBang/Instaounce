@@ -1,0 +1,14 @@
+{% extends "./base.html" %} {% block content %}
+
+<h1>{{ user.get_username }}</h1>
+{% if user_uploaded_images %}
+<ul>
+  {% for image in user_uploaded_images %}
+  <a href="{% url 'instaounce:detail' image.id %}">
+    <img src="{{ image.image.url }}" alt="{{ image.name }}" />
+  </a>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No images are available.</p>
+{% endif %} {% endblock %}

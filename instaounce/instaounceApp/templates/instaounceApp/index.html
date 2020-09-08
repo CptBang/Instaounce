@@ -1,4 +1,5 @@
 {% extends "./base.html" %} {% block content %} {% if user.is_authenticated %}
+<h2>Feed</h2>
 {% if latest_image_list %}
 <ul>
   {% for image in latest_image_list %}

@@ -1,0 +1,15 @@
+{% extends "./base.html" %} {% block content %} {% if user == image.author%}
+<h1>{{ image.name }}</h1>
+<form method="POST">
+  {% csrf_token %}
+  <ul>
+    <h2>posted by {{ image.author }}</h2>
+    <img src="{{ image.image.url }}" alt="{{ image.name }}" />
+  </ul>
+  <p>Are you sure you want to delete this image?</p>
+
+  <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+{% else %}
+<p>Please respect other users and do not attempt to delete their images</p>
+{% endif %} {% endblock %}
