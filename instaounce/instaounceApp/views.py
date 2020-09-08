@@ -15,14 +15,6 @@ class SignupView(generic.CreateView):
     template_name = 'instaounceApp/signup.html'
     success_url = '/'
 
-    # def form_valid(self, form):
-    #     form.save()
-    #     username = form.cleaned_data.get('username')
-    #     raw_password = form.cleaned_data.get('password1')
-    #     user = authenticate(username=username, password=raw_password)
-    #     login(self.request, user)
-    #     return redirect('home')
-
 
 class Login(LoginView):
     template_name = 'instaounceApp/login.html'
