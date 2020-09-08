@@ -15,4 +15,4 @@ To run:
 
 
 
-Created for Shopfiy Developer Internship for Winter 2021.
+Created for Shopify Developer Internship for Winter 2021.
