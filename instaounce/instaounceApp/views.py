@@ -3,9 +3,25 @@ from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.urls import reverse
 from django.views import generic
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.forms import UserCreationForm
 
 from .models import Image
 from .forms import UploadImageForm
+
+
+class SignupView(generic.CreateView):
+    form_class = UserCreationForm
+    template_name = 'instaounceApp/signup.html'
+    success_url = '/'
+
+    # def form_valid(self, form):
+    #     form.save()
+    #     username = form.cleaned_data.get('username')
+    #     raw_password = form.cleaned_data.get('password1')
+    #     user = authenticate(username=username, password=raw_password)
+    #     login(self.request, user)
+    #     return redirect('home')
 
 
 class Login(LoginView):
@@ -44,7 +60,7 @@ class UploadView(generic.CreateView):
         return super().form_valid(form)
 
 
-class DeleteImageView(generic.DeleteView):
+class DeleteImageView(LoginRequiredMixin, generic.DeleteView):
     model = Image
     template_name = 'instaounceApp/deleteImage.html'
     success_url = '/profile/'

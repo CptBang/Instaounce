@@ -5,6 +5,7 @@ from . import views
 app_name = 'instaounce'
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
+    path('signup/', views.SignupView.as_view(), name='signup'),
     path('login/', views.Login.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('profile/', views.ProfileView.as_view(), name='profile'),
